@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Healthify</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">    
+  <style>
+    form{
+      text-align:center;
+      
+   
+    }
+   body{
+      background-color:Tomato;
+     font-style:italic;
+     font-size:20px
+        
+    }
+    #button{
+     background-color:#ed940e
+    }
+    input{
+      background-color:#727571;
+      border-color:black
+        
+    }
+   
+    select{
+      background-color:#727571;
+      border-width:2px;
+      border-radius:3px;
+      border-color:black
+    }
+    input::placeholder{
+      color:white
+    }
+    h1{
+      text-align:center
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://tse3.mm.bing.net/th?id=OIP.u_DfQjq0l0Q5Mhx4fx754AAAAA&pid=Api&P=0&w=300&h=300" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      Healthify
+    </a>
+  </div>
+</nav>
+    <br>
+    <h1>Stroke prediction</h1>
+    <br>
+
+
+
+<strong>
+<form action="{{url_for('predict')}}" method="POST">
+</div>
+    <div class="mb-3">
+     <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+    <select style="color:white" name="gender" class="form-select"  aria-label="select example" required="required">
+      
+      <option value="male">----------male----------</option>
+      <option value="female">---------female---------</option>
+      
+    </select>
+    
+  </div>
+
+<div class="mb-3">
+    <label for="age" class="col-sm-2 col-form-label">Age</label>
+    <input  type="text" name="age" placeholder="enter your age" required="required">
+    
+  </div>
+  
+  
+<div class="mb-3">
+     <label for="hypertension" class="col-sm-2 col-form-label">Do you have hypertension?</label>
+    <select style="color:white" name="hypertension" class="form-select" required="required" aria-label="select example">
+      
+      <option value="yes">-----------yes-----------</option>
+      <option value="no">-----------no-----------</option>
+      
+    </select>
+    
+  </div>
+  
+  
+<div class="mb-3">
+     <label for="heart disease" class="col-sm-2 col-form-label">Do you have any heart disease?</label>
+    <select style="color:white" name="heart_disease" class="form-select" required aria-label="select example">
+      
+      <option value="yes">-----------yes-----------</option>
+      <option value="no">-----------no-----------</option>
+      
+    </select>
+    
+  </div>
+<div class="mb-3">
+     <label for="marry" class="col-sm-2 col-form-label">Are you married?</label>
+    <select style="color:white" name="ever_married" class="form-select" required="required" aria-label="select example">
+      
+      <option value="yes">-----------yes-----------</option>
+      <option value="no">-----------no-----------</option>
+      
+    </select>
+    
+  </div>
+  <div class="mb-3">
+     <label for="residence" class="col-sm-2 col-form-label">select your residence type</label>
+    <select style="color:white" name="Residence_type" class="form-select" required="required" aria-label="select example">
+      
+      <option value="urban">----------urban----------</option>
+      <option value="rural">----------rural----------</option>
+      
+    </select>
+    
+  </div>
+      
+      
+      <div class="mb-3">
+    <label for="glucose" class="col-sm-2 col-form-label">average glucose level</label>
+    <input  type="text" name="avg_glucose_level" placeholder="enter glucose level" required="required">
+    
+  </div>
+                     
+          <div class="mb-3">
+    <label for="bmi" class="col-sm-2 col-form-label">BMI</label>
+    <input  type="text" name="bmi" placeholder="enter your bmi" required="required">
+    
+  </div>
+  
+  
+   <div class="mb-3">
+     <label for="smoking_status" class="col-sm-2 col-form-label">select your smoking status</label>
+    <select style="color:white" name="smoking_status" class="form-select" required="required" aria-label="select example">
+      
+      <option value="formerly smoked">-----formerly smoked-----</option>
+      <option value="never smoked">-------never smoked-------</option>
+      <option value="smokes">---------smokes---------</option>
+      <option value="unknown">-------unknown--------</option>
+      
+    </select>
+    
+  </div>
+             
+             
+          
+                                                                                     
+ <input type="submit" value="predict" class="btn btn-secondary" id="button">
+</form></strong>
+<br>
+
+</body>
+</html>
+
+
